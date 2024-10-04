@@ -51,18 +51,11 @@ class PracticeFormPage {
         await this.page.getByPlaceholder('Current Address').fill(address);
     }
 
-    // async uploadPicture(filePath) {
-    //     await this.page.getByLabel('Select picture').setInputFiles(filePath);
-    // }
-
-    
     async uploadPicture() {
-        const filePath = 'C:\\Users\\jason.dsouza\\Downloads\\img.png'; // Use double backslashes for Windows paths
+        const filePath = 'C:\\Users\\jason.dsouza\\Downloads\\img.png'; 
         await this.page.getByLabel('Select picture').setInputFiles(filePath);
     }
     
-
-
     async selectState(state) {
         await this.page.locator('#state svg').click();
         await this.page.getByText(state, { exact: true }).click();
